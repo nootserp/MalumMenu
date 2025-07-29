@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using BepInEx.Unity.IL2CPP;
 using UnityEngine.SceneManagement;
 using System;
@@ -15,6 +15,7 @@ namespace MalumMenu;
 public partial class MalumMenu : BasePlugin
 {
     public Harmony Harmony { get; } = new(Id);
+    public static MalumMenu Instance { get; private set; }
     public static string malumVersion = "2.5.0";
     public static List<string> supportedAU = new List<string> { "2025.3.25", "2025.3.31" };
     public static MenuUI menuUI;
@@ -30,6 +31,8 @@ public partial class MalumMenu : BasePlugin
 
     public override void Load()
     {
+        Instance = this;
+
 
         //Load config settings
         menuKeybind = Config.Bind("MalumMenu.GUI",

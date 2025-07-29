@@ -33,6 +33,8 @@ public static class PlayerPhysics_LateUpdate
 
         //MalumPPMCheats.teleKillWaitFrames--;
 
+        DebugCheats.handleDebugCheats();
+
         TracersHandler.drawPlayerTracer(__instance);
 
         GameObject[] bodyObjects = GameObject.FindGameObjectsWithTag("DeadBody");

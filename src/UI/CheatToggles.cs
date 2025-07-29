@@ -89,6 +89,17 @@ namespace MalumMenu
         public static bool freeCosmetics = true;
         public static bool avoidBans = true;
 
+        //Debug
+        public static bool occlusionCulling = true;
+        public static bool showUnityLogs;
+        public static bool forceLoadSettings;
+        public static bool forceSaveSettings;
+        public static bool clearProfilerStats;
+        public static bool showReplayInfo;
+        public static bool resimplifyPolylines;
+        public static bool showColorDebug;
+        public static bool showProfilerStats;
+
         public static void DisablePPMCheats(string variableToKeep)
         {
             reportBody = variableToKeep != "reportBody" ? false : reportBody;

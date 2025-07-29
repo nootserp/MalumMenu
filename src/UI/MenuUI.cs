@@ -140,6 +140,25 @@ public class MenuUI : MonoBehaviour
             new ToggleInfo(" Avoid Penalties", () => CheatToggles.avoidBans, x => CheatToggles.avoidBans = x),
             new ToggleInfo(" Unlock Extra Features", () => CheatToggles.unlockFeatures, x => CheatToggles.unlockFeatures = x),
         }, new List<SubmenuInfo>()));
+
+        groups.Add(new GroupInfo("Debug", false, new List<ToggleInfo>() {
+            new ToggleInfo(" Enable Occlusion Culling", () => CheatToggles.occlusionCulling, x => CheatToggles.occlusionCulling = x),
+            new ToggleInfo(" Log Unity Debug Messages", () => CheatToggles.showUnityLogs, x => CheatToggles.showUnityLogs = x),
+            new ToggleInfo(" Force Load Settings", () => CheatToggles.forceLoadSettings, x => CheatToggles.forceLoadSettings = x),
+            new ToggleInfo(" Force Save Settings", () => CheatToggles.forceSaveSettings, x => CheatToggles.forceSaveSettings = x),
+            new ToggleInfo(" Clear Profiler Stats", () => CheatToggles.clearProfilerStats, x => CheatToggles.clearProfilerStats = x),
+        }, new List<SubmenuInfo> {
+            new SubmenuInfo("Replay", false, new List<ToggleInfo>() {
+                new ToggleInfo(" Show Replay Info", () => CheatToggles.showReplayInfo, x => CheatToggles.showReplayInfo = x),
+                new ToggleInfo(" Re-simplify Polylines", () => CheatToggles.resimplifyPolylines, x => CheatToggles.resimplifyPolylines = x),
+            }),
+            new SubmenuInfo("Colors", false, new List<ToggleInfo>() {
+                new ToggleInfo(" Show Color Debug", () => CheatToggles.showColorDebug, x => CheatToggles.showColorDebug = x),
+            }),
+            new SubmenuInfo("Profiler", false, new List<ToggleInfo>() {
+                new ToggleInfo(" Show Profiler Stats", () => CheatToggles.showProfilerStats, x => CheatToggles.showProfilerStats = x),
+            }),
+        }));
     }
 
     private void Update(){
